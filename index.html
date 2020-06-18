@@ -56,11 +56,27 @@
             <div class="carousel-item watch-live">
                 <div class="inner-container bg"> 
                     Lightning here
-                    <div id="lightning"></div>
+                    <div id="lightningComp"></div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://ajcutiltest-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("c:DA_LightningOutBase", function () {
+            $Lightning.createComponent("c:daLightningOutHandler",
+                                       { "inputValue" : "Test Value 11111"},
+                "lightningComp",
+                function (cmp) {
+                    console.log("LWC component was created");
+                    // do some stuff
+                }
+            );
+        },
+            "https://ajcutiltest-dev-ed.lightning.force.com/",
+            "6Cel800D1t000000q6ht8881t000001zV8mAUWF0vJg9MuWb28HufeYgEHPgMdBDeZFnh2Mwsaun9FKoxb1ITBV2MuNscy4XgyGmKJkwiLh"
+        );
+    </script>
     <footer class="ld-dark">
         <div class="container">
             
